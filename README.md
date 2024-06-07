@@ -6,7 +6,9 @@ open your terminal and go to your directory project :
 1. run composer install
 2. run cp .env.example .env and than setting your database
 3. run php artisan key:generate
+<br>
 jika belum melakukan migrate coba migarate terlebih dahulu.
+<br>
 4. run npm install ; npm run dev;
 5. run php artisan serve in your second terminal
 6. run project in http://127.0.0.1:8000
