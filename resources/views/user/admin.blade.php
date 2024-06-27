@@ -6,14 +6,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
-                
+
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-                        
+
                     {{ __('You are logged in!') }}
                     {{-- @extends('layouts.app') --}}
 
@@ -25,7 +25,8 @@
                     <div class="card-header">Manajemen User data</div>
 
                     <div class="card-body">
-                        <table class="table table-bordered">
+                        <a class="btn btn-primary font-bold py-2 px-4 rounded" href="{{ route('create') }}">+</a>
+                        <table class="table table-bordered mt-4">
                             <thead>
                                 <tr>
                                     <th>ID</th>

@@ -12,26 +12,25 @@
     <title>Edit User</title>
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 </head>
-<>
     <div class="container">
         <h1>Edit User</h1>
-        <form action="{{ route('update', $user->id) }}" method="POST">
+        <form action="{{ route('update', $users->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="name">Name:</label>
-                <input type="text" name="name" class="form-control" value="{{ $user->name }}">
+                <input type="text" name="name" class="form-control" value="{{ $users->name }}">
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" name="email" class="form-control" value="{{ $user->email }}">
+                <input type="email" name="email" class="form-control" value="{{ $users->email }}">
             </div>
             <div class="form-group">
                 <label for="password">password:</label>
-                <input type="password" name="password" class="form-control" value="{{ $user->password }}">
+                <input type="password" name="password" class="form-control" required>
             </div>
             <!-- Add other fields as necessary -->
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary mt-4">Update</button>
         </form>
     </div>
                     </div>
