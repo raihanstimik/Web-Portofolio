@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Role;
+use App\Models\User;
+use Database\Seeders\UserSeeder;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class UserController extends Controller
 {
@@ -11,7 +16,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+     // Fetch all users
+     $users = User::all();
+
+     // Pass the users to the view
+     return view('user.admin', compact('users'));
     }
 
     /**
@@ -43,7 +52,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        return view('user.edit', compact('users'));
     }
 
     /**
@@ -51,14 +61,28 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $users = User::findOrFail($id);
+        $users->update($request->all());
+        return redirect()->route('admin')->with('success', 'User updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request,$id)
     {
-        //
+        $users = user::find($id);
+
+        // //delete image
+        // user::delete('admin'. $users->data);
+
+        //delete data
+        if($users){
+            $users->delete();
+        }
+
+        //redirect to index
+        return redirect()->route('/user/admin');
     }
 }
+
