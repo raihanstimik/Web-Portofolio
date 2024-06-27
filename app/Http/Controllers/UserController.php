@@ -8,6 +8,7 @@ use Database\Seeders\UserSeeder;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -28,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
     /**
@@ -36,7 +37,23 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'role' => 'required',
+        ]);
+
+        // Buat user baru
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'role_id' => $request->role,
+        ]);
+
+        // Redirect atau kirim respons
+        return redirect()->route('/user/admin')->with('success', 'Registration successful.');
     }
 
     /**
@@ -63,7 +80,7 @@ class UserController extends Controller
     {
         $users = User::findOrFail($id);
         $users->update($request->all());
-        return redirect()->route('admin')->with('success', 'User updated successfully');
+        return redirect()->route('/user/admin')->with('success', 'User updated successfully');
     }
 
     /**
