@@ -21,4 +21,13 @@ class UserSeeder extends Seeder
             "role_id" => 1
         ]);
     }
+    // public function store()
+    // {
+    //     User::create([
+    //         "name" => 'required|max:255',
+    //         "email" => 'required|email|unique:users',
+    //         "password" => Hash::make('required'),
+    //         "role_id" => 'required',
+    //     ]);
+    // }
 }
