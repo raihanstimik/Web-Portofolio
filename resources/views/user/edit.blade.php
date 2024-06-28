@@ -5,7 +5,10 @@
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card">
-                    <div class="card-header">Manajemen User data</div>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h1>Manajemen User data</h1>
+                        <a href="/user/admin" class="text-primary text-sm" >back</a>
+                    </div>
 
                     <div class="card-body">
                         <table class="table table-striped">
