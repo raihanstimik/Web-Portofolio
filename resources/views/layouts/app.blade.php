@@ -77,6 +77,7 @@
                     </div>
 
                     <div class="position-relative z-100 flex justify-end p-3">
+
                         @guest
                         <a role="button" href="{{ route('register') }}" class="text-decoration-none">
                             <button class="btn btn-primary">Daftar</button>
@@ -87,6 +88,7 @@
                         </a>
                     </div>
                     @endif
+                    
                     @auth
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -116,7 +118,7 @@
                   <div class="card">
                       <div class="card-header"></div>
                 @yield('content')
-                
+
                 <div class="card-body">
                 </div>
             </div>
