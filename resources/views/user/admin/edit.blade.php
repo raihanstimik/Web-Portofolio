@@ -7,9 +7,8 @@
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h1>Manajemen User data</h1>
-                        <a href="/user/admin" class="text-primary text-sm" >back</a>
+                        <a href="{{ route('admin') }}" class="text-primary text-sm" >back</a>
                     </div>
-
                     <div class="card-body">
                         <table class="table table-striped">
     <title>Edit User</title>

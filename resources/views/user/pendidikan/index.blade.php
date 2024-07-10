@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="pb-3"><a href="{{ route('pendidikan/create') }}" class="btn btn-primary">Tambah data</a></div>
+    <div class="pb-3"><a href="{{ route('pendidikan.create') }}" class="btn btn-primary">Tambah data</a></div>
     <div class="table-responsive">
         <table class="table table-stripped">
             <thead>

@@ -6,7 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
-
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -62,15 +61,14 @@
                         </div>
 
                         <div class="row mb-3">
-                            <label for="role_id" class="col-md-4 col-form-label text-md-end">{{ __('Role ') }}</label>
-                            <div class="col-md-3">
-                            <select name="role_id" id="role_id" class="form-control">
-                                                <option value="">Select Role</option>
-                                                <option value=1>admin</option>
-                                                <option value=2>user</option>
-                                            </select>
+                            <label for="role_id" class="col-md-4 col-form-label text-md-end"></label>
+                            <div class="col-md-6">
+                                <input type="checkbox" id="role_id" name="role_id" value="2">
+                                <label for="role_id"> Setujui untuk melanjutkan</label><br>
+                                
                             </div>
                         </div>
+
 
                         <div class="row mb-3">
                             <div class="col-md-6 offset-md-4">
