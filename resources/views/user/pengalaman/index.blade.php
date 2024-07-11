@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+@auth
                     <div class="pb-3 p-2 "><a href="{{ route('pengalaman.create') }}" class="btn btn-primary p-2" >isi pengalaman</a></div>
     <div class="table-responsive">
         <table class="table table-stripped">
@@ -38,4 +39,5 @@
             </tbody> --}}
         </table>
     </div>
+    @endif
 @endsection

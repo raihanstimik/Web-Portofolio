@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class KeahlianController extends Controller
+class HalamanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('user.keahlian.index');
+        return view('layouts.home');
     }
 
     /**
@@ -19,7 +19,7 @@ class KeahlianController extends Controller
      */
     public function create()
     {
-        return view('user.keahlian.create');
+        //
     }
 
     /**

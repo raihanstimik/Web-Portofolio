@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\metadata;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 
-class ProfilController extends Controller
+class TemplateController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('user/profil/index');
+        return view('dashboard.template.index');
     }
 
     /**
@@ -21,7 +19,7 @@ class ProfilController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.template.create');
     }
 
     /**
@@ -53,7 +51,7 @@ class ProfilController extends Controller
      */
     public function update(Request $request, string $id)
     {
-//
+        //
     }
 
     /**

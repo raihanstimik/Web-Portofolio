@@ -40,17 +40,20 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'required','confirmed','min:8',
             'role' => 'required',
         ]);
 
         // Buat user baru
-        User::create([
+        $user=User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role_id' => $request->role,
         ]);
+        if (!$user){
+            return redirect()->route('admin.create')->with('error', 'Registration failed.');
+        }
 
         // Redirect atau kirim respons
         return redirect()->route('admin')->with('success', 'Registration successful.');

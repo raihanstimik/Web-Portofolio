@@ -23,11 +23,17 @@
             </div>
             <div class="mb-6">
                 <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
-                <input type="password" name="password" id="password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your password">
+                <input type="password" required name="password" id="password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Enter your password">
+            @if($errors->has('password'))
+                    <span class="text-red-500">{{ $errors->first('password') }}</span>
+            @endif
             </div>
             <div class="mb-6">
                 <label for="password" class="block text-gray-700 font-medium mb-2">Password confirm</label>
-                <input type="password"id="password-confirm" name="password_confirmation" required autocomplete="new-password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="confirm password">
+                <input type="password"id="password" name="password_confirmation" required autocomplete="new-password" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="confirm password" required>
+                @if($errors->has('password'))
+                <span class="text-red-500">{{ $errors->first('password') }}</span>
+                @endif
             </div>
             <div class="mb-4">
                 <label for="role" class="block text-gray-700">Role :</label>
