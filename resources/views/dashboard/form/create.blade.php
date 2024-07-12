@@ -2,13 +2,13 @@
 @extends('layouts.home')
 @section('home')
     <form class="border border-gray-900/10 rounded-lg shadow-lg p-10" action="{{ route('form.store') }}" method="POST">
+        @method('POST')
       @csrf
         <div class="space-y-12">
             <div class="border-b border-gray-900/10 pb-12">
                 <h1 class="text-base font-semibold leading-7 text-gray-900">Biodata diri formulir</h1>
                 <p class="mt-1 text-sm leading-6 text-gray-600">*Isikan data diri anda dengan benar dan tidak ada salah
                     ketik.</p>
-
 
                 {{-- nama form --}}
                 <div class="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">

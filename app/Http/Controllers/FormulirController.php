@@ -13,9 +13,9 @@ class FormulirController extends Controller
      */
     public function index()
     {
-        $data = form::orderBy('form','asc')->get();
+        $identitas = form::get();
 
-        return view('dashboard.form.index')->with('data',$data);
+        return view('dashboard.form.index')->with('identitas',$identitas);
     }
 
     /**
@@ -92,7 +92,7 @@ class FormulirController extends Controller
             ]
         );
 
-        $data =[
+        $identitas =[
             'nama'=>$request->nama,
             'provinsi'=>$request->provinsi,
             'email'=>$request->email,
@@ -112,7 +112,7 @@ class FormulirController extends Controller
             'hardskill'=>$request->hardskill,
             'bahasa'=>$request->bahasa,
         ];
-        form::create($data);
+        form::create($identitas);
         return redirect()->route('form.index')->with('success','Berhasil menambahkan data');
     }
 
@@ -129,8 +129,8 @@ class FormulirController extends Controller
      */
     public function edit(string $id)
     {
-        $data = form::where('id',$id)->first();
-        return view('dashboard.form.edit')->with('data',$data);
+        $identitas = form::where('id',$id)->first();
+        return view('dashboard.form.edit')->with('identitas',$identitas);
     }
 
     /**
@@ -140,19 +140,67 @@ class FormulirController extends Controller
     {
         $request->validate(
             [
-                'judul' =>'required',
+                'nama' =>'required',
+                'provinsi' =>'required',
+                'email' =>'required',
                 'isi' =>'required',
+                'posisi' =>'required',
+                'perusahaan' =>'required',
+                'tgl_mulai' =>'required',
+                'tgl_akhir' =>'required',
+                'jobdesk' =>'required',
+                'sekolah' =>'required',
+                'jurusan' =>'required',
+                'tgl_mulai2' =>'required',
+                'tgl_akhir2' =>'required',
+                'ipk' =>'required',
+                'isi2' =>'required',
+                'softskill' =>'required',
+                'hardskill' =>'required',
+                'bahasa' =>'required',
             ],[
-                'judul.required' =>'judul wajib di isi',
-                'isi.required' =>'isian tulisan wajib di isi',
+                'nama.required' =>'nama wajib di isi',
+                'provinsi.required' =>'provinsi tulisan wajib di isi',
+                'email.required' =>'email tulisan wajib di isi',
+                'isi.required' =>'isi tulisan wajib di isi',
+                'posisi.required' =>'posisi tulisan wajib di isi',
+                'perusahaan.required' =>'perusahaan tulisan wajib di isi',
+                'tgl_mulai.required' =>'tanggal tulisan wajib di isi',
+                'tgl_akhir.required' =>'tanggal tulisan wajib di isi',
+                'jobdesk.required' =>'jobdesk tulisan wajib di isi',
+                'sekolah.required' =>'sekolah tulisan wajib di isi',
+                'jurusan.required' =>'jurusan tulisan wajib di isi',
+                'tgl_mulai2.required' =>'tanggal tulisan wajib di isi',
+                'tgl_akhir2.required' =>'tanggal tulisan wajib di isi',
+                'ipk.required' =>'ipk tulisan wajib di isi',
+                'isi2.required' =>'isian tulisan wajib di isi',
+                'softskill.required' =>'softskill tulisan wajib di isi',
+                'hardskill.required' =>'softskill tulisan wajib di isi',
+                'bahasa.required' =>'bahasa tulisan wajib di isi',
             ]
         );
 
-        $data =[
-            'judul'=>$request->judul,
-            'isi'=>$request->isi
+        $identitas =[
+            'nama'=>$request->nama,
+            'provinsi'=>$request->provinsi,
+            'email'=>$request->email,
+            'isi'=>$request->isi,
+            'posisi'=>$request->posisi,
+            'perusahaan'=>$request->perusahaan,
+            'tgl_mulai'=>$request->tgl_mulai,
+            'tgl_akhir'=>$request->tgl_akhir,
+            'jobdesk'=>$request->jobdesk,
+            'sekolah'=>$request->sekolah,
+            'jurusan'=>$request->jurusan,
+            'tgl_mulai2'=>$request->tgl_mulai2,
+            'tgl_akhir2'=>$request->tgl_akhir2,
+            'ipk'=>$request->ipk,
+            'isi2'=>$request->isi2,
+            'softskill'=>$request->softskill,
+            'hardskill'=>$request->hardskill,
+            'bahasa'=>$request->bahasa,
         ];
-        form::where('id',$id)->update($data);
+        form::where('id',$id)->update($identitas);
         return redirect()->route('form.index')->with('success','Berhasil melakukan UPDATE data');
     }
 
