@@ -15,6 +15,6 @@
             <textarea name="isi" cols="30" rows="5" class="form-control summernote">{{ Session::get('isi') }}
         </textarea>
         </div>
-        <button class="btn btn-primary" name="simpan" type="submit">Simpan</button>
+        <button class="btn btn-primary" name="simpan" type="submit">Simpan</button> 
     </form>
 @endsection

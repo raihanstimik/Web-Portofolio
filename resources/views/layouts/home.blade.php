@@ -93,6 +93,9 @@
                 </div>
             </div>
             <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-20">
+                <div class="card-header">
+                    @include('dashboard.pesan')
+                </div>
                 @yield('home')
                 
                 <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
