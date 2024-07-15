@@ -21,7 +21,7 @@ class UserController extends Controller
      $users = User::orderBy('id', 'asc')->where('id', '>=', 1)->get();
 
      // Pass the users to the view
-     return view('user.admin', compact('users'));
+     return view('user.admin.index', compact('users'));
     }
 
     /**
@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.create');
+        return view('user.admin.create');
     }
 
     /**
@@ -53,7 +53,7 @@ class UserController extends Controller
         ]);
 
         // Redirect atau kirim respons
-        return redirect()->route('/user/admin')->with('success', 'Registration successful.');
+        return redirect()->route('admin')->with('success', 'Registration successful.');
     }
 
     /**
@@ -70,7 +70,7 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $users = User::findOrFail($id);
-        return view('user.edit', compact('users'));
+        return view('user.admin.edit', compact('users'));
     }
 
     /**
@@ -80,7 +80,7 @@ class UserController extends Controller
     {
         $users = User::findOrFail($id);
         $users->update($request->all());
-        return redirect()->route('/user/admin')->with('success', 'User updated successfully');
+        return redirect()->route('admin')->with('success', 'User updated successfully');
     }
 
     /**
@@ -99,7 +99,7 @@ class UserController extends Controller
         }
 
         //redirect to index
-        return redirect()->route('/user/admin');
+        return redirect()->route('admin');
     }
 }
 

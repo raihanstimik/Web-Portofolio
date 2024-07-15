@@ -9,7 +9,7 @@
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
     <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <a href="/user/admin" class="w-full bg-blue-500 text-white font-bold py-2 px-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-250 focus:ring-offset-2" >kembali</a>
+        <a href="{{ route('admin') }}" class="w-full bg-blue-500 text-white font-bold py-2 px-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-250 focus:ring-offset-2" >kembali</a>
         <h2 class="text-2xl font-bold mb-6 text-center text-gray-800">Tambah Data</h2>
         <form action="{{ route('storeUser') }}" method="POST">
             @csrf

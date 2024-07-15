@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="pb-3"><a href="{{ route('pendidikan') }}" class="btn btn-secondary">
+<div class="pb-3"><a href="{{ route('pendidikan.index') }}" class="btn btn-secondary">
     << kembali</a>
 </div>
 <form action="" method="POST">

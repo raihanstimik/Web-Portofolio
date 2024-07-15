@@ -18,43 +18,47 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @vite('resources/css/app.css')
 
+    {{-- text --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" />
+
 </head>
 <body>
     <div id="app" class="d-flex">
         @auth
         <div class="d-flex flex-column flex-shrink-0 p-2 text-bg-white shadow-sm" style="width: 210px; height: 100vh;">
             <div class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-black text-decoration-none">
-              <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
-              <span class="fs-4">Portofolio</span>
+              <svg class="bi pe-none me-2" width="30" height="30"></svg>
+              <span class="fs-5">ATS Portofolio</span>
             </div>
             <hr>
             <ul class="nav nav-pills flex-column mb-auto">
               <li class="nav-item">
-                <a href="{{ asset('user/admin') }}" class="nav-link text-black" aria-current="page">
+                <a href="{{ route('main.index') }}" class="nav-link text-black" aria-current="page">
                   <svg class="bi pe-none me-2" width="6" height="6"></svg>
-                  User admin
+                  Halaman
                 </a>
               </li>
               <li>
-                <a href="{{ asset('user/profil/index') }}" class="nav-link text-black" aria-current="page">
+                <a href="{{ route('profil.index') }}" class="nav-link text-black" aria-current="page">
                   <svg class="bi pe-none me-2" width="6" height="6"><use xlink:href="#table"></use></svg>
                   Profil
                 </a>
               </li>
               <li>
-                <a href="{{ asset('user/pengalaman/index') }}" class="nav-link text-black">
+                <a href="{{ route('pengalaman.index') }}" class="nav-link text-black">
                   <svg class="bi pe-none me-2" width="6" height="6"></svg>
                   Pengalaman
                 </a>
               </li>
               <li>
-                <a href="{{ asset('user/pendidikan/index') }}" class="nav-link text-black">
+                <a href="{{ route('pendidikan.index') }}" class="nav-link text-black">
                   <svg class="bi pe-none me-2" width="6" height="6"><use xlink:href="#grid"></use></svg>
                   Pendidikan
                 </a>
               </li>
               <li>
-                <a href="{{ asset('user/keahlian/index') }}" class="nav-link text-black">
+                <a href="{{ route('keahlian.index') }}" class="nav-link text-black">
                   <svg class="bi pe-none me-2" width="6" height="6"><use xlink:href="#people-circle"></use></svg>
                   Keahlian
                 </a>
@@ -95,8 +99,7 @@
                             {{ Auth::user()->name }}
                             </button>
                             <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="dashboard">Dashboard</a></li>
-                            <li><a class="dropdown-item" href="#">Analitycs</a></li>
+                            <li><a class="dropdown-item" href="/">Dashboard</a></li>
                             <li><a class="dropdown-item" href="#">Setting</a></li>
                             <li><li class="dropdown-divider"></li>
                             <li>
@@ -107,26 +110,37 @@
                             </li>
                             </ul>
                         </div>
-                    @endif
-
-                </div>
+                        
+                      </div>
             </div>
         </header>
         <div class="datauser">
           <div class="row justify-content-center">
-              <div class="col-md-11">
+            <div class="col-md-11">
                   <div class="card">
-                      <div class="card-header"></div>
-                @yield('content')
-
-                <div class="card-body">
+                      <div class="card-header">
+                        @include('user.pesan')
+                      </div>
+                      @endif
+                      @yield('content')
+                      
+                      <div class="card-body">
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+              </div>
             </main>
+          </div>
         </div>
-    </div>
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
+    <script>
+      $(document).ready(function() {
+          $('.summernote').summernote({
+              height: 200
+          });
+      });
+  </script>
+      </body>
 </html>
