@@ -18,10 +18,10 @@ class UserController extends Controller
     public function index()
     {
      // Fetch all users
-     $users = User::orderBy('id', 'asc')->where('id', '>=', 1)->get();
+     $users = User::get();
 
      // Pass the users to the view
-     return view('user.admin.index', compact('users'));
+     return view('admin.user.index', compact('users'));
     }
 
     /**
@@ -29,7 +29,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('user.admin.create');
+        return view('admin.user.create');
     }
 
     /**
@@ -40,20 +40,23 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required',
-            'password' => 'required',
+            'password' => 'required','confirmed','min:8',
             'role' => 'required',
         ]);
 
         // Buat user baru
-        User::create([
+        $user=User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role_id' => $request->role,
         ]);
+        if (!$user){
+            return redirect()->route('user.create')->with('error', 'Registration failed.');
+        }
 
         // Redirect atau kirim respons
-        return redirect()->route('admin')->with('success', 'Registration successful.');
+        return redirect()->route('user.index')->with('success', 'Registration successful.');
     }
 
     /**
@@ -69,8 +72,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $users = User::findOrFail($id);
-        return view('user.admin.edit', compact('users'));
+        $users = User::where('id',$id)->first();
+        return view('admin.user.edit')->with('users',$users);
     }
 
     /**
@@ -78,28 +81,32 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $users = User::findOrFail($id);
-        $users->update($request->all());
-        return redirect()->route('admin')->with('success', 'User updated successfully');
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+            'password' => 'required','confirmed','min:8',
+        ]);
+        $users=[
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ];
+        User::where('id',$id)->update($users);
+        return redirect()->route('user.index')->with('success','Berhasil melakukan UPDATE data');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request,$id)
+    public function destroy(string $id)
     {
-        $users = user::find($id);
-
+        
         // //delete image
         // user::delete('admin'. $users->data);
-
+        
         //delete data
-        if($users){
-            $users->delete();
-        }
-
-        //redirect to index
-        return redirect()->route('admin');
+        user::where('id',$id)->delete();
+        return redirect()->route('user.index')->with('success','Berhasil melakukan delete data');
     }
 }
 

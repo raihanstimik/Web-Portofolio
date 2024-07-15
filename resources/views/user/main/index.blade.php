@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+@auth
             <div class="pb-3 p-2"><a href="{{ route('main.create') }}" class="btn btn-primary">tambah halaman</a></div>
             <div class="table-reponsive">
                 <table class="table table-stripped" style="border: 1px solid; border-collapse:collapse;">
@@ -39,5 +40,5 @@
                     </tbody>
                 </table>
             </div>
-
+@endif
 @endsection
