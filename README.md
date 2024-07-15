@@ -3,9 +3,9 @@ ini adalah project untuk membuat portofolio otomatis dengan web.
 
 Clone or download this project 
 open your terminal and go to your directory project :
-1. run composer install
-2. run cp .env.example .env and than setting your database
-3. run php artisan key:generate
+1. composer install
+2. cp .env.example .env and than setting your database
+3. php artisan key:generate
 <br>
 jika belum melakukan migrate coba migarate terlebih dahulu.
 <br>
@@ -13,7 +13,7 @@ jika belum melakukan migrate coba migarate terlebih dahulu.
 5. run php artisan serve in your second terminal
 6. run project in http://127.0.0.1:8000
 
-=============================================================================
+=======================================================================================
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
