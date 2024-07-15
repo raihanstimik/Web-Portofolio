@@ -1,13 +1,15 @@
 @extends('layouts.app')
 
-@section('content')
+@section('admin')
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
+     @vite('resources/css/app.css')
     <div class="datauser">
         <div class="row justify-content-center">
             <div class="col-md-11">
                 <div class="card">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <h1>Manajemen User data</h1>
-                        <a href="{{ route('admin') }}" class="text-primary text-sm" >back</a>
+                        <a href="{{ route('user.index') }}" class="text-primary text-sm" >back</a>
                     </div>
                     <div class="card-body">
                         <table class="table table-striped">
@@ -16,7 +18,7 @@
 </head>
     <div class="container">
         <h1>Edit User</h1>
-        <form action="{{ route('update', $users->id) }}" method="POST">
+        <form action="{{ route('user.update', $users->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="form-group">

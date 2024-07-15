@@ -1,22 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-     <!-- Fonts -->
-     <link rel="dns-prefetch" href="//fonts.bunny.net">
-     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
- 
- 
-     <!-- Scripts -->
-     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+@extends('layouts.app')
+@section('admin')
+@vite(['resources/sass/app.scss', 'resources/js/app.js'])
      @vite('resources/css/app.css')
-</head>
-<body>
-    
-    <div class="container">
+     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
@@ -33,7 +20,7 @@
                         {{-- @extends('layouts.app') --}}
                         @auth
                         <div class="card-body">
-                            <a class="btn btn-primary font-bold py-2 px-4 rounded" href="{{ route('create') }}">Tambah Data </a>
+                            <a class="btn btn-primary font-bold py-2 px-4 rounded" href="{{ route('user.create') }}">Tambah Data </a>
                             <table class="table table-bordered mt-4">
                                 <thead>
                                     <tr>
@@ -57,7 +44,7 @@
                                             <td class="text-center">{{ $user->created_at }}</td>
                                             <td class="text-center">{{ $user->updated_at }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('edit', $user->id) }}" class="btn btn-primary">Edit</a>
+                                                <a href="{{ route('user.edit',$user->id) }}" class="btn btn-primary">Edit</a>
                                                 {{-- untuk menghapus data --}}
                                                 <form action="{{ route('user.destroy', $user->id) }}" method="POST" style="display:inline;">
                                                     @method('DELETE')
@@ -76,5 +63,4 @@
             </div>
         </div>
         @endauth
-</body>
-</html>
+@endsection

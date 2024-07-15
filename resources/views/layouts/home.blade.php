@@ -7,19 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 </head>
 
 <body>
     <div class="bg-white">
         <header class="absolute inset-x-0 top-0 z-50">
-            <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <nav class="flex items-center justify-between p-6 lg:px-8" x-data="{ isOn: false }" aria-label="Global">
                 <div class="flex lg:flex-1">
                     <p class="-m-1.5 p-1.5 font-bold">PORTOFOLIO</p>
                 </div>
                 <div class="flex lg:hidden">
-                    <button type="button"
+                    <button type="button" @click="isOpen = !isOpen"
                         class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
                         <span class="sr-only">Open main menu</span>
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -31,7 +34,7 @@
                 </div>
                 <div class="hidden lg:flex lg:gap-x-12">
                     <a href="/" class="text-sm font-semibold leading-6 text-gray-900">Home</a>
-                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Tentang</a>
+                    <a href="{{ route('about') }}" class="text-sm font-semibold leading-6 text-gray-900">Tentang</a>
                     <a href="{{ route('form.index') }}" class="text-sm font-semibold leading-6 text-gray-900">Riwayat</a>
                 </div>
                 <div class="hidden lg:flex lg:flex-1 lg:justify-end">
@@ -106,7 +109,15 @@
                 </div>
             </div>
         </div>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs5.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $('.summernote').summernote({
+                            height: 200
+                        });
+                    });
+                </script>
 </body>
 
 </html>
