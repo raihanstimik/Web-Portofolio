@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('datatable', function (Blueprint $table) {
             $table->id();
-            $table->string('');
             $table->timestamps();
         });
     }
