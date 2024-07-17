@@ -4,7 +4,6 @@
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\HasilController;
 use App\Http\Controllers\KontenController;
-use App\Http\Controllers\MainController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\TentangController;
