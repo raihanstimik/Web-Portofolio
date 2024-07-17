@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\form;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class FormulirController extends Controller
@@ -13,8 +14,9 @@ class FormulirController extends Controller
      */
     public function index()
     {
+        Auth::user()->role_id;// Ambil role_id dari pengguna yang sedang login
+        
         $identitas = form::get();
-
         return view('dashboard.form.index')->with('identitas',$identitas);
     }
 
@@ -112,7 +114,12 @@ class FormulirController extends Controller
             'hardskill'=>$request->hardskill,
             'bahasa'=>$request->bahasa,
         ];
-        form::create($identitas);
+        form::create(array_merge(
+            $request->all(),
+            [
+                'role_id' => Auth::user()->role_id // Set role_id dari pengguna yang sedang login
+            ]
+        ));
         return redirect()->route('form.index')->with('success','Berhasil menambahkan data');
     }
 

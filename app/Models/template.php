@@ -5,9 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class main extends Model
+class template extends Model
 {
     use HasFactory;
-    protected $table = "main";
-    protected $fillable = ['judul','isi'];
 }

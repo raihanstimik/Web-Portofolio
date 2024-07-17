@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('konten', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('category_id');
+            $table->string('category_konten');
             $table->string('description');
             $table->string('image_path')->nullable();
             $table->timestamps();
