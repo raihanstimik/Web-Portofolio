@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 route::get('dashboard/tentang',[TentangController::class,'index'])->name('about');
-
+Route::get('form/result', [FormulirController::class, 'result'])->name('result');
 Route::prefix('dashboard')->middleware('auth')->group(
     function() {
         //dashboard route

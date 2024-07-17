@@ -15,9 +15,16 @@ class FormulirController extends Controller
     public function index()
     {
         Auth::user()->role_id;// Ambil role_id dari pengguna yang sedang login
-        
+
         $identitas = form::get();
         return view('dashboard.form.index')->with('identitas',$identitas);
+    }
+    public function result()
+    {
+        $user = Auth::user()->role_id;// Ambil role_id dari pengguna yang sedang login
+
+        $identitas = form::get();
+        return view('dashboard.hasil.index', compact('identitas'));
     }
 
     /**
@@ -128,7 +135,7 @@ class FormulirController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
