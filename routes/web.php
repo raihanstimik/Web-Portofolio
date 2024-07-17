@@ -1,43 +1,48 @@
 <?php
 
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\KeahlianController;
-use App\Http\Controllers\PendidikanController;
-use App\Http\Controllers\PengalamanController;
-use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\FormulirController;
+use App\Http\Controllers\HasilController;
+use App\Http\Controllers\KontenController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\TableController;
+use App\Http\Controllers\TemplateController;
+use App\Http\Controllers\TentangController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('user/dashboard');
+    return view('dashboard.user.index');
 });
 
 Auth::routes();
-//admin route
-Route::get('/user/admin', [UserController::class, 'index'])->name('/user/admin');
-Route::get('/create', [UserController::class, 'create'])->name('create');
-Route::post('/store', [UserController::class, 'store'])->name('storeUser');
-Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
-Route::put('/admin/{id}', [UserController::class, 'update'])->name('update');
-Route::DELETE('/admin/{id}', [UserController::class, 'destroy'])->name('user.destroy');
 
-//Profil route
-Route::get('/user/profil/index', [ProfilController::class, 'index'])->name('/user/profil/index');
+route::get('dashboard/tentang',[TentangController::class,'index'])->name('about');
 
-//pengalaman route
-Route::get('/user/pengalaman/index', [PengalamanController::class, 'index'])->name('back/index');
-Route::get('/user/pengalaman/create', [PengalamanController::class, 'create'])->name('pengalaman');
+Route::prefix('dashboard')->middleware('auth')->group(
+    function() {
+        //dashboard route
+        Route::resource('template',TemplateController::class);
+        Route::resource('form',FormulirController::class);
+        Route::resource('hasil',HasilController::class);
+    }
+);
 
-//pendidikan route
-Route::get('/user/pendidikan/index',[PendidikanController::class,'index'])->name('pendidikan');
-Route::get('/user/pendidikan/create', [PendidikanController::class, 'create'])->name('pendidikan/create');
+Route::prefix('admin')->middleware(['auth'])->group(
+    function () {
+        Route::get('', [UserController::class, 'index'])->name('admin');
+        Route::delete('/user/{id}', [UserController::class, 'destroy'])->name('user.destroy');
+        Route::resource('user',UserController::class);
+        Route::resource('table_data',TableController::class);
+        Route::resource('konten',KontenController::class);
+        // Route::get('/order/history', [CartController::class, 'history'])->name('order.history');
+    });
 
-//keahlian route
-Route::get('/user/keahlian/index',[KeahlianController::class,'index'])->name('keahlian.index');
-Route::get('/user/keahlian/create',[KeahlianController::class,'create'])->name('keahlian.create');
 
-
-//dashboard route
-Route::get('/user/dashboard',[DashboardController::class, 'index'])->name('user.dashboard');
+// Route::prefix('user')->group(
+//     function() {
+//         //main(user) route
+//         Route::resource('main',MainController::class);
+//     }
+// );

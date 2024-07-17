@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/user/admin';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -53,6 +53,11 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'role_id'=>['required']
+        ],[
+            'nama.required'=>'nama harus di isi',
+            'email.required'=>'email wajib di isi',
+            'password.required'=>'password wajib di isi',
+            'role_id.required'=>'cetang setujui terlebih dahulu',
         ]);
     }
 

@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class TemplateController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('layouts.dashboard');
+        return view('dashboard.template.index');
     }
 
     /**
@@ -19,7 +19,7 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        return view('dashboard.template.create');
     }
 
     /**
