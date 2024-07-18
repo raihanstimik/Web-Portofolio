@@ -25,7 +25,7 @@ class FormulirController extends Controller
 
         $identitas = form::get();
         return view('dashboard.hasil.index', compact('identitas'));
-    }
+    } 
 
     /**
      * Show the form for creating a new resource.
