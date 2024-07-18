@@ -7,7 +7,7 @@
             <div class="col-12 mb-2">
                 <div class="card">
                     <div class="card-header">
-                        <h1>Product
+                        <h1>
                             <a href="{{ route('konten.create') }}" class="btn btn-primary btn-sm float-end">+ Add Product</a>
                         </h1>
                     </div>

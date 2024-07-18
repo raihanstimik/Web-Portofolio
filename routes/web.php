@@ -4,6 +4,7 @@
 use App\Http\Controllers\FormulirController;
 use App\Http\Controllers\HasilController;
 use App\Http\Controllers\KontenController;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\TableController;
 use App\Http\Controllers\TemplateController;
 use App\Http\Controllers\TentangController;
@@ -22,6 +23,7 @@ Route::get('form/result', [FormulirController::class, 'result'])->name('result')
 Route::prefix('dashboard')->middleware('auth')->group(
     function() {
         //dashboard route
+        Route::get('/unduh-pdf', [PDFController::class, 'unduhPDF'])->name('unduh-pdf');
         Route::resource('template',TemplateController::class);
         Route::resource('form',FormulirController::class);
         Route::resource('hasil',HasilController::class);
@@ -35,13 +37,4 @@ Route::prefix('admin')->middleware(['auth'])->group(
         Route::resource('user',UserController::class);
         Route::resource('table_data',TableController::class);
         Route::resource('konten',KontenController::class);
-        // Route::get('/order/history', [CartController::class, 'history'])->name('order.history');
     });
-
-
-// Route::prefix('user')->group(
-//     function() {
-//         //main(user) route
-//         Route::resource('main',MainController::class);
-//     }
-// );

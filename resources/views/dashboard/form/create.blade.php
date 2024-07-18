@@ -94,7 +94,7 @@
                                 Anda :</label>
                             <textarea id="isi" rows="8" cols="50" name="isi" 
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="Saya seorang Kapten kapal laud dan memiliki minat bakat pada ternak ikan lele....">{{ Session::get('isi') }}</textarea>
+                                placeholder="Saya adalah orang yang sangat teliti dan memiliki minat dan bakat pada seni rupa.....">{{ Session::get('isi') }}</textarea>
                         </div>
                     </div>
                     <div class="sm:col-span-2">
@@ -114,7 +114,7 @@
                     <div class="mb-5">
                         <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Posisi
                             :</label>
-                        <input type="text" id="base-input" name="posisi" placeholder="administrasi" value="{{ Session::get('posisi') }}"
+                        <input type="text" id="base-input" name="posisi" placeholder="contoh administrasi" value="{{ Session::get('posisi') }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
                 </div>
@@ -124,7 +124,7 @@
                     <div class="mb-5">
                         <label for="perusahaan" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama
                             Perusahaan :</label>
-                        <input type="text" id="perusahaan" name="perusahaan" placeholder="PT.push mytic glory" value="{{ Session::get('perusahaan') }}"
+                        <input type="text" id="perusahaan" name="perusahaan" placeholder="PT.Nusantara" value="{{ Session::get('perusahaan') }}"
                             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                                 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Jobdeks :</label>
                             <textarea id="jobdesk" rows="8" name="jobdesk" 
                                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                placeholder="*Melakukan analisa kredit terperinci...">{{ Session::get('jobdesk') }}</textarea>
+                                placeholder="*Melakukan analisa barang terperinci...">{{ Session::get('jobdesk') }}</textarea>
                         </div>
                     </div>
                     <hr>
@@ -222,7 +222,7 @@
                                         :</label>
                                     <textarea id="isi2" rows="8" name="isi2" 
                                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="*opsional">{{ Session::get('isi2') }}</textarea>
+                                        placeholder="">{{ Session::get('isi2') }}</textarea>
                                 </div>
                             </div>
                             <hr>
@@ -234,7 +234,7 @@
                                         :</label>
                                     <textarea id="softskill" rows="8" name="softskill" 
                                         class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                        placeholder="*opsional">{{ Session::get('softskill') }}</textarea>
+                                        placeholder="">{{ Session::get('softskill') }}</textarea>
                                 </div>
                                 {{-- hard skill textarea --}}
                                 <div class="sm:col-span-3">
@@ -244,7 +244,7 @@
                                             :</label>
                                         <textarea id="hardskill" rows="8" name="hardskill" value="{{ Session::get('hardskill') }}"
                                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            placeholder="*opsional">{{ Session::get('hardskill') }}</textarea>
+                                            placeholder="">{{ Session::get('hardskill') }}</textarea>
                                     </div>
                                 </div>
                                 {{-- Bahasa yang dipelajari textarea --}}
@@ -255,7 +255,7 @@
                                             yang dipelajari :</label>
                                         <textarea id="bahasa" rows="8" name="bahasa" 
                                             class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                                            placeholder="*opsional">{{ Session::get('bahasa') }}</textarea>
+                                            placeholder="">{{ Session::get('bahasa') }}</textarea>
                                     </div>
                                 </div>
 
