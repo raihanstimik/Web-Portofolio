@@ -13,8 +13,6 @@ return new class extends Migration
     {
         Schema::create('datatable', function (Blueprint $table) {
             $table->id();
-<<<<<<< HEAD
-=======
             $table->string('nama');
             $table->string('provinsi');
             $table->string('email');
@@ -32,7 +30,6 @@ return new class extends Migration
             $table->text('softskill')->nullable();
             $table->text('hardskill')->nullable();
             $table->text('bahasa')->nullable();
->>>>>>> 2635405051020312202f8c6ed4b194affa64c9c6
             $table->timestamps();
         });
     }
