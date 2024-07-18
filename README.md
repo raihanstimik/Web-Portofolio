@@ -11,9 +11,9 @@ jika belum melakukan migrate coba migarate terlebih dahulu.
 <br>
 4. run npm install ; npm run dev;
 <br>
-6. run php artisan serve in your second terminal
+5. run php artisan serve in your second terminal
 <br>
-8. run project in http://127.0.0.1:8000
+6. run project in http://127.0.0.1:8000
 <br>
 
 1. ## Instalasi Komposer
