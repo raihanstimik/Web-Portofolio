@@ -27,7 +27,7 @@ class LoginController extends Controller
             return redirect()->route('admin'); // Ganti dengan route admin dashboard yang sesuai
         }
 
-        return redirect('/'); // Redirect ke halaman home atau halaman lain untuk user non-admin
+        return redirect('/'); // Redirect ke halaman home atau halaman lain untuk user non-admin 
     }
     /**
      * Where to redirect users after login.

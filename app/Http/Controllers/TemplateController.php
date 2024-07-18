@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use Illuminate\Http\Request;
 
 class TemplateController extends Controller
@@ -19,7 +20,7 @@ class TemplateController extends Controller
      */
     public function create()
     {
-        return view('dashboard.template.create');
+        return view('dashboard.template.create',compact('template'));
     }
 
     /**
