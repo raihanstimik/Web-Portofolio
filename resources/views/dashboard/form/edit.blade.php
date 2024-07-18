@@ -52,7 +52,7 @@
                             <option value="Kalimantan Selatan">Kalimantan Selatan</option>
                             <option value="Kalimantan Timur">Kalimantan Timur</option>
                             <option value="Kalimantan Utara">Kalimantan Utara</option>
-                            <option value="Sulawesi Utara"></option>
+                            <option value="Sulawesi Utara">Sulawesi Utara</option>
                             <option value="Gorontalo">Gorontalo</option>
                             <option value="Sulawesi Tengah">Sulawesi Tengah</option>
                             <option value="Sulawesi Barat">Sulawesi Barat</option>

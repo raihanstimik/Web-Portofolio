@@ -54,7 +54,7 @@
                             <option value="Kalimantan Selatan">Kalimantan Selatan</option>
                             <option value="Kalimantan Timur">Kalimantan Timur</option>
                             <option value="Kalimantan Utara">Kalimantan Utara</option>
-                            <option value="Sulawesi Utara"></option>
+                            <option value="Sulawesi Utara">Sulawesi Utara</option>
                             <option value="Gorontalo">Gorontalo</option>
                             <option value="Sulawesi Tengah">Sulawesi Tengah</option>
                             <option value="Sulawesi Barat">Sulawesi Barat</option>
@@ -261,12 +261,13 @@
 
                                 <div class="mt-6 flex items-center justify-end gap-x-6">
                                     <a type="" href="/"
-                                        class="text-sm font-semibold leading-6 text-gray-900">Batal</a>
+                                        class="text-sm font-semibold leading-6 text-gray-900"><button type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">batal</button>
+                                    </a>
+                                        <button type="submit" class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Simpan</button>
                                     {{-- <button type="submit"
                                         class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Simpan</button> --}}
                                 </div>
                             </div>
                         </div>
-                        <button class="btn btn-primary" name="simpan" type="submit">Simpan</button>
     </form>
 @endsection
