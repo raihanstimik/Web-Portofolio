@@ -23,13 +23,13 @@
                                 <a href="{{ route('admin') }}"
                                     class="{{ request()->is('admin') ? ' bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Data
                                     user</a>
-                                <a href="{{ route('table_data.index') }}"
+                                {{-- <a href="{{ route('table_data.index') }}"
                                     class="{{ request()->is('table_data.index') ? ' bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Table
-                                    data</a>
+                                    data</a> --}}
                                 <a href="{{ route('konten.index') }}"
                                     class="{{ request()->is('konten.index') ? ' bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white' }} rounded-md px-3 py-2 text-sm font-medium">Konten</a>
-                                <a href="#"
-                                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a>
+                                {{-- <a href="#"
+                                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Reports</a> --}}
                             </div>
                         </div>
                     </div>
